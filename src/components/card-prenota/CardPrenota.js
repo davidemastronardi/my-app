@@ -3,19 +3,19 @@ import { useRef } from "react";
 import "./CardPrenota.css";
 import pippo from "../../img/whatsapp.png";
 import x from "../../img/x.svg";
+import pdf from "../../img/prova.pdf";
 
 const CardPrenota = () => {
-
   const [isOpen, setIsOpen] = useState(false);
-  
-  const activateMessaggio = () => {
-    setIsOpen(true);
+
+  const downloadpdf = () => {
+    window.open(pdf);
   };
 
   const closeMessaggio = () => {
     setIsOpen(false);
   };
-  
+
   const form = useRef(null);
   // const InvioPrenotazione = {
   //   nome: "davide",
@@ -36,13 +36,15 @@ const CardPrenota = () => {
     let formObject = Object.fromEntries(data.entries());
 
     formObject.giorno = formObject.giorno.split("-").reverse().join("-");
-    formObject.numerocommensali = formObject.numerocommensali? parseInt(formObject.numerocommensali) : 0;
-    formObject.numerobambini = formObject.numerobambini? parseInt(formObject.numerobambini) : 0;
+    formObject.numerocommensali = formObject.numerocommensali
+      ? parseInt(formObject.numerocommensali)
+      : 0;
+    formObject.numerobambini = formObject.numerobambini
+      ? parseInt(formObject.numerobambini)
+      : 0;
     console.log(formObject);
-    if ((formObject.numerocommensali + formObject.numerobambini )>= 5) {
-      setIsOpen(true)
-
-      
+    if (formObject.numerocommensali + formObject.numerobambini >= 5) {
+      setIsOpen(true);
     }
   };
 
@@ -53,26 +55,33 @@ const CardPrenota = () => {
           <h1 className="title-prenota">Prenota ora</h1>
         </div>
         <form className="form" ref={form} onSubmit={InvioDati}>
-          {isOpen&&<div className="box-messaggio">
-            <img className="x-messaggio" src={x} onClick={closeMessaggio} alt="x" />
-            <div className="text-messaggio">
-              <h1>Attenzione!</h1>
-              <p>
-                Lo staff di <strong>ENIGMA</strong> consiglia di concordare un
-                menu fisso per prenotazioni di tavoli composti da 5 o più
-                persone, cosi da evitare lunghi tempi di attesa.
-              </p>
-              <p>Contattaci via whatsapp o telefonicamente. </p>
-              <div className="box-button-messaggio">
-                <a href="https://wa.me/3899999788">
-                  <img className="button-whatsapp" src={pippo} alt="phone" />
-                </a>
+          {isOpen && (
+            <div className="box-messaggio">
+              <img
+                className="x-messaggio"
+                src={x}
+                onClick={closeMessaggio}
+                alt="x"
+              />
+              <div className="text-messaggio">
+                <h1>Attenzione!</h1>
+                <p>
+                  Lo staff di <strong>ENIGMA</strong> consiglia di concordare un
+                  menu fisso per prenotazioni di tavoli composti da 5 o più
+                  persone, cosi da evitare lunghi tempi di attesa.
+                </p>
+                <p>Contattaci via whatsapp o telefonicamente. </p>
+                <div className="box-button-messaggio">
+                  <a href="https://wa.me/3899999788">
+                    <img className="button-whatsapp" src={pippo} alt="phone" />
+                  </a>
+                </div>
+                <p>
+                  <strong>+39 389 9999788</strong>
+                </p>
               </div>
-              <p>
-                <strong>+39 389 9999788</strong>
-              </p>
             </div>
-          </div>}
+          )}
           <div className="box-input">
             <label>Nome</label>
             <input className="input" name="nome" type="text" />
@@ -126,6 +135,7 @@ const CardPrenota = () => {
           <div className="box-invia">
             <input className="invia input" type="submit" />
           </div>
+          <button onClick={downloadpdf}>prova</button>
         </form>
       </div>
     </div>
