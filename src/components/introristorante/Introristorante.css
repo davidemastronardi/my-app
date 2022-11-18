@@ -1,0 +1,28 @@
+.intro-ristorante {
+    width: 100%;
+    background-image: url(../../img/introristorante.png)!important;
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 90px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .intro-ristorante .box-logo {
+    margin-top: 100px;
+  }
+  .intro-ristorante .il-ristorante-logo {
+    height: 80px;
+  }
+  /* ------------------TABLET---------------- */
+  
+  @media screen and (min-width: 426px) {
+    .intro-ristorante .il-ristorante-logo {
+      height: 100px;
+    }
+  }
+  @media screen and (min-width: 1025px) {
+    .intro-ristorante .il-ristorante-logo {
+      height: 150px;
+    }
+  }

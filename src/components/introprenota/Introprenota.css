@@ -1,0 +1,28 @@
+.introprenota {
+    width: 100%;
+    background-image: url(../../img/vassoio.png) !important;
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 90px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .introprenota .box-logo {
+    margin-top: 100px;
+  }
+  .introprenota .prenota-logo {
+    height: 80px;
+  }
+  /* ------------------TABLET---------------- */
+  
+  @media screen and (min-width: 426px) {
+    .introprenota .prenota-logo {
+      height: 100px;
+    }
+  }
+  @media screen and (min-width: 1025px) {
+    .introprenota .prenota-logo {
+      height: 150px;
+    }
+  }

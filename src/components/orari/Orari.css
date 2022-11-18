@@ -1,0 +1,51 @@
+.orari {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.orari .box-orari {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.orari .title {
+  padding: 10px;
+}
+
+.orari img {
+  height: 60px;
+  z-index: 9;
+}
+
+.orari .cont-text {
+  width: 100%;
+  padding: 30px;
+  margin-top: -25px;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  height: 100%;
+}
+
+.orari .bianco {
+  background-color: white;
+  color: black;
+}
+
+.orari .blak {
+  background-color: black;
+  color: white;
+}
+
+@media screen and (min-width: 769px) {
+  .orari {
+    width: 100%;
+    display: flex;
+    flex-direction: initial;
+  }
+}

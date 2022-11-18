@@ -1,0 +1,122 @@
+/* utility */
+.reverse{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  /* ----------------- */
+  .territorio .container-ter {
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+  }
+  .territorio .wrap-ter {
+    width: 1024px;
+    display: flex;
+    gap: 30px;
+  }
+  .territorio .content-ter {
+    width: 50%;
+    border-radius: 20px;
+    
+  }
+  .territorio .territorio-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: cecontent-ter2nter;
+    align-items: center;
+    background-color: white;
+    padding: 30px;
+    gap: 30px;
+  }
+  
+  .territorio .img-territorio {
+    width: 100%;
+  }
+  .territorio .img-menu2 {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .territorio .riga {
+    font-size: 16px;
+    color: white;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .territorio .riga2 {
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+  }
+  @media screen and (min-width: 320px) and (max-width: 1024px){
+    .territorio{
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .territorio .wrap-ter {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .territorio .content-ter {
+      width: 100%;
+      border-radius: 20px;
+      
+    }
+    .territorio .wrap-ter {
+      width: 100%;
+      display: flex;
+      gap: 30px;
+    }
+    .territorio .wrap-ter2 {
+      display: flex;
+      flex-direction: column-reverse;
+      margin-top: 0px;
+    
+    }
+    .territorio .territorio-left {
+      width: 100%;
+     padding: 50px 30px;
+     border-radius: 0;
+    }
+  
+    .territorio .riga {
+    padding: 0 30px;
+    text-align: center;
+    }
+    .img-risotto{
+      width: 100%;
+    }
+    .button-menu2{
+      display: flex;
+      gap: 20px;
+    }
+  }
+  
+  @media screen and (min-width: 1025px){
+  .territorio{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .button-menu2{
+    display: flex;
+    gap: 30px;
+  }
+  .img-risotto{
+    width: 100%;
+    height: 100%;
+    border-radius: 0px 20px 20px 0px;
+  }
+  .territorio .content-ter-ristorante {
+    width: 50%;
+    border-radius: 20px 0px 0px 20px;
+  }
+  .territorio .wrap-ter2 {
+    width: 1024px;
+    display: flex;
+    gap: 0px;
+  }
+  }

@@ -1,0 +1,160 @@
+/* --------utility------------- */
+.contattaci .size-30 {
+  font-size: 30px;
+}
+
+.contattaci .size-25 {
+  font-size: 25px;
+}
+
+.contattaci .font {
+  font-family: "Inter", sans-serif;
+}
+
+/* --------------------------- */
+.contattaci {
+  color: white;
+  background-color: #1e1e1e;
+  padding-bottom: 30px;
+}
+
+.contattaci .box-contattaci-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contattaci .bk-contatti {
+  width: 100%;
+  background-image: url(../../img/vini.png) !important;
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  position: relative;
+}
+.contattaci .box-contatti {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 50px;
+}
+
+.contattaci .img {
+  height: 60px;
+  margin: 10px;
+}
+
+.contattaci .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.contattaci .wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+.contattaci .box-saluti {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0px 30px;
+  margin-top: 30px;
+}
+.contattaci .box-saluti p {
+  color: #740a0a;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+}
+.contattaci .box-faq {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contattaci .termini {
+  width: 320px;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  font-size: 12px;
+  font-family: "Inter", sans-serif;
+}
+.contattaci .reserved {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+@media screen and (min-width: 1024px) {
+  .contattaci .box-contatti {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  .contattaci .wrap {
+    display: flex;
+    align-content: center;
+  }
+  .contattaci .card {
+    width: calc(100% / 3);
+    height: 171px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .contattaci .box-faq {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .contattaci .reserved {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 0;
+    font-family: "Inter", sans-serif;
+  }
+  .contattaci .box-contattaci-home {
+    font-size: 30px;
+  }
+  .contattaci .img {
+    height: 80px;
+  }
+  .contattaci .box-saluti p {
+    color: #740a0a;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+  }
+  .contattaci .box-saluti h1 {
+    font-size: 40px;
+  }
+  .contattaci .termini {
+    width: 320px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    font-size: 12px;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+  }
+  .contattaci .reserved {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 0px;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,94 @@
+.card-bar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 30px;
+}
+.box-card-drink {
+  color: white;
+  background-color: #860a0a;
+}
+.box-card-apericena {
+  color: #860a0a;
+  background-color: white;
+}
+.box-card-cantina {
+  color: white;
+  background-color: #860a0a;
+}
+.box-card {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.img-drink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.drink {
+  height: 60px;
+}
+.title-drink {
+  font-size: 20px;
+  text-align: center;
+}
+.text-drink {
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+}
+.button-drink {
+  padding: 10px;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  border-radius: 5px;
+  border: none;
+  color: #860a0a;
+  margin-top: 30px;
+}
+.button-apericena {
+  padding: 10px;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: #860a0a;
+  margin-top: 30px;
+}
+
+.button {
+  margin-top: auto;
+}
+
+.drinklistinverno{
+  height: calc(100vh - 90px);
+  z-index: 6;
+  display: none;
+}
+
+@media screen and (min-width: 1025px) {
+  .card-bar {
+    width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+  .box-card {
+    height: 444px;
+    top: -100px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    flex: 1 1 0%;
+  }
+  
+}

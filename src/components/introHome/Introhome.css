@@ -1,0 +1,114 @@
+.introhome {
+  width: 100%;
+  background-image: url(../../img/photo_2022-09-12_02-05-32\ 1.png) !important;
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 90px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.introhome .box-intro {
+  width: 300px;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.8;
+  padding: 40px 20px;
+  border-radius: 20px;
+}
+
+.introhome .box-logo {
+  border-bottom: 2px solid #860a0a;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.introhome .logo-intro {
+  height: 40px;
+}
+
+.introhome .box-text-logo {
+  margin-top: 10px;
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}
+
+.introhome .box-text {
+  width: 426px;
+  color: white;
+  margin-top: 40px;
+  display: none;
+  font-size: 30px;
+}
+
+.introhome .box-button-intro {
+  margin-top: 40px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.introhome .but {
+  padding: 10px ;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.introhome .prenota {
+  background-color: #860a0a;
+  color: white;
+}
+
+/* ------------------TABLET---------------- */
+
+@media screen and (min-width: 483px) {
+  .introhome .box-intro {
+    width: 465px;
+    background-color: rgb(0, 0, 0);
+    padding: 40px 20px;
+    border-radius: 20px;
+  }
+
+  .introhome .box-text {
+    color: white;
+    margin-top: 40px;
+    display: block;
+    font-size: 30px;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+  }
+
+  .introhome .box-text-logo {
+    margin-top: 10px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .introhome .testo{
+    font-size: 18px;
+  }
+
+  .introhome .but {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+  .introhome .introhome .logo-intro {
+    height: 70px;
+  }
+  .introhome .restaurant{
+    font-size: 40px;
+  }
+  .introhome .box-logo {
+    border-bottom: 4px solid #860a0a;
+   
+  }
+  .but:hover{
+    cursor: pointer;
+  }
+}

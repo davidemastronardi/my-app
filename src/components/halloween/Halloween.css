@@ -1,0 +1,32 @@
+.halloween{
+    width: 100%;
+    height: calc(100vh - 90px);
+    position: fixed;
+    top: 90px;
+    left: 0;
+    z-index: 15;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 5px solid black;
+    display: none;
+}
+
+.halloween .ragnatela{
+    display: flex;
+    justify-content: space-between;
+}
+.halloween .ragno{
+   height: 95px;
+}
+.halloween .ragno2{
+    height: 180px;
+}
+.halloween .zucche{
+}
+.halloween .zucca{
+    width: 100%; 
+    height: 100%; 
+}
+

@@ -1,0 +1,16 @@
+.ristorante{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+@media screen and (min-width: 1025px) {
+    .cardristorante {
+      position: relative;
+      top: -130px;
+    }
+    .wrap-cardristorante {
+      position: relative;
+      height: 400px;
+    }
+  }

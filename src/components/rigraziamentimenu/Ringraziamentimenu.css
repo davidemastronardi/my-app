@@ -1,0 +1,24 @@
+.ringraziamentimenu{
+    /* color: white; */
+    color: black;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 30px;
+    /* background-color: black; */
+    background-color: white;
+    padding: 30px;
+}
+
+
+@media screen and (min-width: 1140px) {
+    .ringraziamentimenu{
+       width: 1139px;
+       margin: 0 auto;
+       border-radius: 20px;
+       margin-top: -130px;
+    }
+}

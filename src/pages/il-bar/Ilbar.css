@@ -1,0 +1,11 @@
+
+@media screen and (min-width: 1025px) {
+  .cardbar {
+    position: relative;
+    top: -100px;
+  }
+  .wrap-cardbar {
+    position: relative;
+    height: 400px;
+  }
+}

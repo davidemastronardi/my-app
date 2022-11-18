@@ -1,0 +1,28 @@
+.intro-menu {
+    width: 100%;
+    background-image: url(../../img/intromenu.png) !important;
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 90px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .intro-menu .box-logo {
+    margin-top: 100px;
+  }
+  .intro-menu .il-bar-logo {
+    height: 80px;
+  }
+  /* ------------------TABLET---------------- */
+  
+  @media screen and (min-width: 426px) {
+    .intro-menu .il-bar-logo {
+      height: 100px;
+    }
+  }
+  @media screen and (min-width: 1025px) {
+    .intro-menu .il-bar-logo {
+      height: 150px;
+    }
+  }
