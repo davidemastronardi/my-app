@@ -18,10 +18,11 @@
 
 .cardprenota .form {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10px;
   flex-wrap: wrap;
   padding: 0 10px 30px 10px;
-  background-color: #ececec;
+  background-color: rgb(255, 255, 255);
   z-index: 0;
 }
 
@@ -34,18 +35,41 @@
   height: 37px;
 }
 .cardprenota .box-input100 {
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  padding: 5px;
+  border-radius: 5px;
+  border: gray solid 2px;
+}
+.cardprenota .box-input-messaggi{
   display: flex;
   flex-direction: column;
   width: 100%;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  padding: 5px;
+}
+
+.cardprenota textarea{
+  padding: 5px;
+  border-radius: 5px;
+  border: gray solid 2px;
+  font-family: "Inter", sans-serif;
 }
 .cardprenota .mex {
   height: 100px;
 }
 
 .cardprenota .input {
+  width: 140px;
   font-size: 18px;
   font-family: "Inter", sans-serif;
   padding: 5px;
+  border-radius: 5px;
+  border: gray solid 2px;
 }
 
 label {
@@ -54,6 +78,7 @@ label {
   font-family: "Inter", sans-serif;
   margin-top: 30px;
   margin-bottom: 3px;
+  font-weight: 600;
 }
 .cardprenota .box-invia {
   width: 100%;
@@ -114,6 +139,9 @@ label {
   top: 10px;
   right: 10px;
 }
+.cardprenota input:disabled{
+  background-color: gray;
+}
 
 @media screen and (min-width: 1025px) {
   .cardprenota {
@@ -130,4 +158,5 @@ label {
     padding: 0 30px 30px 30px;
     border-radius: 0 0 20px 20px;
   }
+ 
 }

@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import "./Cardristorante.css";
-import cena2 from "../../img/cena2.png"
-import apericena from "../../img/apericena.png"
-import vinobar from "../../img/vinobar.png"
+import cena2 from "../../img/cena2.png";
+import apericena from "../../img/apericena.png";
+import vinobar from "../../img/vinobar.png";
+import { Link } from "react-router-dom";
+import cartavini from "../../img/carta vini.pdf";
+import {ScrollPage} from "../../pages/il-ristorante/Ristorante";
 
 const Cardristorante = () => {
+  const {scroll} = useContext(ScrollPage);
+  
+
+  const scrollpage = (element) =>{
+    window.scrollTo({top: element.current.offsetTop - 120, behavior: 'smooth', block:''});
+  }
+
+  const downloadcartavini = () => {
+    window.open(cartavini);
+  };
+
   return (
     <div className="card-bar">
       <div className="box-card box-card-drink">
@@ -21,9 +35,9 @@ const Cardristorante = () => {
             con ciò che il globo ha da offrirci.
           </p>
         </div>
-        <div className="button">
-          <button className="button-drink">MENU</button>
-        </div>
+          <Link to="/il-menu" className="btn btn-primary button">
+            IL MENU
+          </Link>
       </div>
       <div className="box-card box-card-apericena">
         <div className="img-drink">
@@ -41,7 +55,7 @@ const Cardristorante = () => {
           </p>
         </div>
         <div className="button">
-          <button className="button-apericena">IL TERRITORIO</button>
+          <button className="btn btn-secondary button" onClick={()=>{scrollpage(scroll.territorio)}}>IL TERRITORIO</button>
         </div>
       </div>
       <div className="box-card box-card-cantina">
@@ -59,7 +73,9 @@ const Cardristorante = () => {
           </p>
         </div>
         <div className="button">
-          <button className="button-drink">LA CANTINA</button>
+          <button className="btn btn-primary button" onClick={downloadcartavini}>
+            LA CANTINA
+          </button>
         </div>
       </div>
     </div>

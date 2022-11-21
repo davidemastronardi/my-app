@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useRef, useState, createContext } from "react";
 import Cardristorante from "../../components/card-ristorante/Cardristorante";
 import Introristorante from "../../components/introristorante/Introristorante";
 import Territorioristorante from "../../components/territorio-ristorante/Territorioristorante";
-import IlTerritorio from "../../components/territorio/IlTerritorio";
 import "./Ristorante.css";
 
+export const ScrollPage=createContext(null)
 const Ristorante = () => {
+  const [scroll, setScroll] = useState("ciao");
   return (
+    <ScrollPage.Provider value={{scroll,setScroll}}>
+
     <div className="ristorante">
       <div className="intro-ristorante">
         <Introristorante />
@@ -16,10 +19,11 @@ const Ristorante = () => {
           <Cardristorante />
         </div>
       </div>
-     <div className="territorioristorante">
-     <Territorioristorante />
-     </div>
+      <div className="territorioristorante">
+        <Territorioristorante />
+      </div>
     </div>
+    </ScrollPage.Provider>
   );
 };
 

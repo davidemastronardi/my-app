@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import "./Territorioristorante.css";
 import ilterritorio2 from "../../img/il territorio2.png";
 import ilristorante2 from "../../img/il ristorante2.png";
 import risotto from "../../img/risotto.jpg";
 import menu2 from "../../img/menu2.png";
+import { ScrollPage } from "../../pages/il-ristorante/Ristorante";
 
 const Territorioristorante = () => {
+  const territorio = useRef();
+  const { scroll, setScroll } = useContext(ScrollPage);
+  useEffect(() => {
+    setScroll({ territorio });
+  }, []);
   return (
-    <div className="territorio">
+    <div className="territorio" ref={territorio}>
       <div className="container-ter">
         <div className="wrap-ter">
           <div className="content-ter territorio-left">
@@ -65,9 +71,6 @@ const Territorioristorante = () => {
               rivisitata in chiave odierna ed originale. Ai nostri chef piace il
               connubio tra il tradizionale e l’innovazione.{" "}
             </p>
-            <div className="button-kmzero">
-              <button className="btn btn-secondary ">MENU</button>
-            </div>
           </div>
           <div className="content-ter">
             <img className="img-risotto" src={risotto} alt="risotto" />

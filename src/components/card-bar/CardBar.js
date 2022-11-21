@@ -3,10 +3,20 @@ import "./CardBar.css";
 import drink from "../../img/drink.png";
 import apericena from "../../img/apericena.png";
 import vinobar from "../../img/vinobar.png";
-
+import drinklist from "../../img/drink list inverno.pdf";
+import aperitivo from "../../img/apericena inverno.pdf";
+import cantina from "../../img/carta vini.pdf";
 
 const CardBar = () => {
-
+  const downloaddrinklist = () => {
+    window.open(drinklist, "_blank");
+  };
+  const downloadmenuapericena = () => {
+    window.open(aperitivo,"_blank");
+  };
+  const downloadcantina = () => {
+    window.open(cantina,"_blank");
+  };
 
   return (
     <div className="card-bar">
@@ -25,7 +35,9 @@ const CardBar = () => {
           </p>
         </div>
         <div className="button">
-          <button className="button-drink">DRINK LIST</button>
+          <button className="button-drink" onClick={downloaddrinklist}>
+            DRINK LIST
+          </button>
         </div>
       </div>
       <div className="box-card box-card-apericena">
@@ -44,7 +56,9 @@ const CardBar = () => {
           </p>
         </div>
         <div className="button">
-          <button className="button-apericena">APERICENA</button>
+          <button className="button-apericena" onClick={downloadmenuapericena}>
+            APERICENA
+          </button>
         </div>
       </div>
       <div className="box-card box-card-cantina">
@@ -62,10 +76,11 @@ const CardBar = () => {
           </p>
         </div>
         <div className="button">
-          <button className="button-drink">LA CANTINA</button>
+          <button className="button-drink" onClick={downloadcantina}>
+            LA CANTINA
+          </button>
         </div>
       </div>
-     
     </div>
   );
 };

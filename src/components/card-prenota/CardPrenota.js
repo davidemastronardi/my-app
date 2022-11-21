@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 import "./CardPrenota.css";
 import pippo from "../../img/whatsapp.png";
@@ -6,31 +6,34 @@ import x from "../../img/x.svg";
 
 const CardPrenota = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [persone, setPersone] = useState(0);
 
   const closeMessaggio = () => {
     setIsOpen(false);
   };
 
   const form = useRef(null);
-  // const InvioPrenotazione = {
-  //   nome: "davide",
-  //   telefono: 3498437914,
-  //   giorno: 14,
-  //   orario: 20.30,
-  //   modalità: "cena",
-  //   numerocommensali: 6,
-  //   numerobambini: 2,
-  //   messaggio:"nessuno"
-  // }
+
+    useEffect(() => {
+      if (persone) {
+      if (parseInt(persone)>=5) {
+      setIsOpen(true)
+    }
+    }
+  }, [persone]);
 
   const InvioDati = (e) => {
     e.preventDefault();
 
     const data = new FormData(form.current);
-
     let formObject = Object.fromEntries(data.entries());
 
+    formObject.messaggio = formObject.messaggio.replace(/(?:\r|\n|\r\n)/g, " ");
     formObject.giorno = formObject.giorno.split("-").reverse().join("-");
+
+    let text = `ciao sono ${formObject.nome} %0asiamo in: ${formObject.numerocommensali} %0avorremmo venire il giorno: ${formObject.giorno} %0aMessaggio: ${formObject.messaggio}`;
+
+   window.open(`https://api.whatsapp.com/send?phone=3482957498&text=${text}`,"_blank")
     formObject.numerocommensali = formObject.numerocommensali
       ? parseInt(formObject.numerocommensali)
       : 0;
@@ -67,7 +70,7 @@ const CardPrenota = () => {
                 </p>
                 <p>Contattaci via whatsapp o telefonicamente. </p>
                 <div className="box-button-messaggio">
-                  <a href="https://wa.me/3899999788">
+                  <a href="https://wa.me/3899999788" target="_blank">
                     <img className="button-whatsapp" src={pippo} alt="phone" />
                   </a>
                 </div>
@@ -91,7 +94,7 @@ const CardPrenota = () => {
           </div>
           <div className="box-input">
             <label>Orario</label>
-            <select className=" select" name="orario">
+            <select className=" select input" name="orario">
               <option value="18:00">18:00</option>
               <option value="18:30">18:30</option>
               <option value="19:00">19:00</option>
@@ -105,20 +108,22 @@ const CardPrenota = () => {
               <option value="23:00">23:00</option>
             </select>
           </div>
-          <label>Aperitivo/Cena</label>
-          <select className="box-input100 input" name="modalita">
-            <option value="apericena">Apericena</option>
-            <option value="cena">Cena</option>
-          </select>
-          <div className="box-input ">
+          <div className="box-input">
+            <label>Aperitivo/Cena</label>
+            <select className="box-input100" name="modalita">
+              <option value="apericena">Apericena</option>
+              <option value="cena">Cena</option>
+            </select>
+          </div>
+          <div className="box-input">
             <label>Num. commensali</label>
-            <input className="input" name="numerocommensali" type="number" />
+            <input className="input" name="numerocommensali" onChange={(e)=>{setPersone(e.target.value)}}type="number" />
           </div>
           <div className="box-input ">
             <label>Num. bambini</label>
             <input className="input" name="numerobambini" type="number" />
           </div>
-          <div className="box-input100">
+          <div className="box-input-messaggi">
             <label>Messaggi</label>
             <textarea
               className="messaggi"
@@ -128,7 +133,7 @@ const CardPrenota = () => {
             ></textarea>
           </div>
           <div className="box-invia">
-            <input className="invia input" type="submit" />
+            <input disabled={persone>5} className="invia input" type="submit" />
           </div>
         </form>
       </div>

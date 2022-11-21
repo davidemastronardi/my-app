@@ -45,10 +45,6 @@ const IlTerritorio = () => {
               chiave odierna ed originale utilizzando prodotti locali. Ai nostri
               barman piace il connubio tra il tradizionale e l’innovazione.{" "}
             </p>
-            <div className="button-kmzero">
-            <button className="btn btn-secondary ">DRINK LIST</button>
-            <button className="btn btn-secondary ">CARTA VINI</button>
-            </div>
           </div>
           <div className="content-ter">
             <img className="img-negroni" src={negroni} alt="negroni" />

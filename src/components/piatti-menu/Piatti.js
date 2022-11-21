@@ -9,7 +9,6 @@ const cocktail=useRef()
 
 const scrollmenu = (element) =>{
   window.scrollTo({top: element.current.offsetTop - 120, behavior: 'smooth', block:''});
-  console.log(element);
 }
 
   return (
