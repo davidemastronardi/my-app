@@ -1,4 +1,5 @@
 import React from "react";
+import Download from "../../components/download-menu/Download";
 import Intromenu from "../../components/intromenu/Intromenu";
 import Piatti from "../../components/piatti-menu/Piatti";
 import Ringrazieamentimenu from "../../components/rigraziamentimenu/Ringrazieamentimenu";
@@ -10,6 +11,7 @@ const Menu = () => {
   <Intromenu/>
   <Ringrazieamentimenu/>
   <Piatti/>
+  <Download/>
  </div>
   );
 };

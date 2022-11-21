@@ -1,0 +1,37 @@
+.download .box-download{
+width: 100%;
+background-color: black;
+color: white;
+padding: 30px;
+text-align: center;
+font-family: "Inter", sans-serif;
+display: flex;
+flex-direction: column;
+}
+.download .title-download{
+    width: 260px;
+    margin: 0 auto;
+}
+
+.download .button-dowload{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.download .button-dow{
+    margin-top: 30px;
+}
+
+@media screen and (min-width: 590px){
+    .download .title-download{
+        width: 100%;
+        margin: 0 auto;
+    } 
+    .download .button-dowload{
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        justify-content: center;
+        
+    }
+}

@@ -3,14 +3,9 @@ import { useRef } from "react";
 import "./CardPrenota.css";
 import pippo from "../../img/whatsapp.png";
 import x from "../../img/x.svg";
-import pdf from "../../img/prova.pdf";
 
 const CardPrenota = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const downloadpdf = () => {
-    window.open(pdf);
-  };
 
   const closeMessaggio = () => {
     setIsOpen(false);
@@ -135,7 +130,6 @@ const CardPrenota = () => {
           <div className="box-invia">
             <input className="invia input" type="submit" />
           </div>
-          <button onClick={downloadpdf}>prova</button>
         </form>
       </div>
     </div>
