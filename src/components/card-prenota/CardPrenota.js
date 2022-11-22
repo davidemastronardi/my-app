@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 import "./CardPrenota.css";
 import pippo from "../../img/whatsapp.png";
-import x from "../../img/x.svg";
+import x from "../../img/x nera.png";
 
 const CardPrenota = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,11 +14,11 @@ const CardPrenota = () => {
 
   const form = useRef(null);
 
-    useEffect(() => {
-      if (persone) {
-      if (parseInt(persone)>=5) {
-      setIsOpen(true)
-    }
+  useEffect(() => {
+    if (persone) {
+      if (parseInt(persone) >= 5) {
+        setIsOpen(true);
+      }
     }
   }, [persone]);
 
@@ -31,19 +31,13 @@ const CardPrenota = () => {
     formObject.messaggio = formObject.messaggio.replace(/(?:\r|\n|\r\n)/g, " ");
     formObject.giorno = formObject.giorno.split("-").reverse().join("-");
 
-    let text = `ciao sono ${formObject.nome} %0asiamo in: ${formObject.numerocommensali} %0avorremmo venire il giorno: ${formObject.giorno} %0aMessaggio: ${formObject.messaggio}`;
-
-   window.open(`https://api.whatsapp.com/send?phone=3482957498&text=${text}`,"_blank")
-    formObject.numerocommensali = formObject.numerocommensali
-      ? parseInt(formObject.numerocommensali)
-      : 0;
-    formObject.numerobambini = formObject.numerobambini
-      ? parseInt(formObject.numerobambini)
-      : 0;
     console.log(formObject);
-    if (formObject.numerocommensali + formObject.numerobambini >= 5) {
-      setIsOpen(true);
-    }
+    let text = `NOME: ( ${formObject.nome} ) %0aNUMERO PERSONE: ( ${formObject.numerocommensali} ) %0aGIORNO: ( ${formObject.giorno} ) %0aTELEFONO: ( ${formObject.telefono} ) %0aORARIO: ( ${formObject.orario} ) %0aMODALITA: ( ${formObject.modalita} ) %0aMESSAGGIO: ( ${formObject.messaggio} )`;
+    window.open(
+      `https://api.whatsapp.com/send?phone=3482957498&text=${text}`,
+      "_blank"
+    );
+    
   };
 
   return (
@@ -66,7 +60,7 @@ const CardPrenota = () => {
                 <p>
                   Lo staff di <strong>ENIGMA</strong> consiglia di concordare un
                   menu fisso per prenotazioni di tavoli composti da 5 o più
-                  persone, cosi da evitare lunghi tempi di attesa.
+                  persone, così da evitare lunghi tempi di attesa.
                 </p>
                 <p>Contattaci via whatsapp o telefonicamente. </p>
                 <div className="box-button-messaggio">
@@ -82,19 +76,20 @@ const CardPrenota = () => {
           )}
           <div className="box-input">
             <label>Nome</label>
-            <input className="input" name="nome" type="text" />
+            <input className="input" name="nome" type="text" required />
           </div>
           <div className="box-input ">
             <label>Telefono</label>
-            <input className="input" name="telefono" type="number" />
+            <input className="input" name="telefono" type="number" required />
           </div>
           <div className="box-input ">
             <label>Giorno</label>
-            <input className="input" name="giorno" type="date" />
+            <input className="input" name="giorno" type="date" required />
           </div>
           <div className="box-input">
             <label>Orario</label>
-            <select className=" select input" name="orario">
+            <select className=" select input" name="orario" required>
+              <option value=""></option>
               <option value="18:00">18:00</option>
               <option value="18:30">18:30</option>
               <option value="19:00">19:00</option>
@@ -110,19 +105,25 @@ const CardPrenota = () => {
           </div>
           <div className="box-input">
             <label>Aperitivo/Cena</label>
-            <select className="box-input100" name="modalita">
+            <select className="box-input100" name="modalita" required>
+              <option value=""></option>
               <option value="apericena">Apericena</option>
               <option value="cena">Cena</option>
             </select>
           </div>
           <div className="box-input">
             <label>Num. commensali</label>
-            <input className="input" name="numerocommensali" onChange={(e)=>{setPersone(e.target.value)}}type="number" />
+            <input
+              className="input"
+              name="numerocommensali"
+              onChange={(e) => {
+                setPersone(e.target.value);
+              }}
+              type="number"
+              required
+            />
           </div>
-          <div className="box-input ">
-            <label>Num. bambini</label>
-            <input className="input" name="numerobambini" type="number" />
-          </div>
+
           <div className="box-input-messaggi">
             <label>Messaggi</label>
             <textarea
@@ -133,7 +134,11 @@ const CardPrenota = () => {
             ></textarea>
           </div>
           <div className="box-invia">
-            <input disabled={persone>5} className="invia input" type="submit" />
+            <input
+              disabled={persone >= 5}
+              className="invia input"
+              type="submit"
+            />
           </div>
         </form>
       </div>
