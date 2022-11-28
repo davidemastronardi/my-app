@@ -7,7 +7,7 @@ const Introprenota = () => {
     <div className="introprenota">
            <div className="box-intro">
         <div className="box-logo">
-          <img className="prenota-logo" src={prenotalogo} alt="logo" />
+          <img className="prenota-logo animate__animated animate__fadeInLeft" src={prenotalogo} alt="logo" />
         </div>
       </div>
     </div>

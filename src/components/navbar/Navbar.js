@@ -16,7 +16,6 @@ import {
 } from "react-router-dom";
 
 const Navbar = () => {
-  
   const [isOpen, setIsOpen] = useState(false);
 
   const activateNavbar = () => {
@@ -31,21 +30,29 @@ const Navbar = () => {
     <div className="navbar">
       <div className="box-navbar">
         <div className="cont-logo">
-          <img className="logo-nav" src={logo} alt="" />
+          <img
+            className="logo-nav animate__animated animate__backInLeft"
+            src={logo}
+            alt=""
+          />
         </div>
         <div className="cont-pages">
           <ul>
-            <li>
+            <li className="animate__animated animate__backInDown">
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li className="animate__animated animate__backInDown ">
               <Link to="/il-bar">Il Bar</Link>
             </li>
-            <li>
-            <Link to="/il-ristorante">Il Ristorante</Link>
+            <li className="animate__animated animate__backInDown">
+              <Link to="/il-ristorante">Il Ristorante</Link>
             </li>
-            <li><Link to="/il-menu">Menu</Link></li>
-            <li><Link to="/prenota">Prenota</Link></li>
+            <li className="animate__animated animate__backInDown">
+              <Link to="/il-menu">Menu</Link>
+            </li>
+            <li className="animate__animated animate__backInDown">
+              <Link to="/prenota">Prenota</Link>
+            </li>
           </ul>
         </div>
 
@@ -69,13 +76,13 @@ const Navbar = () => {
         </div>
         <div className="cont-social">
           <a href="https://wa.me/3899999788">
-            <img className="social" src={phone} alt="phone" />
+            <img className="social animate__animated animate__backInRight" src={phone} alt="phone" />
           </a>
           <a href="https://www.facebook.com/mogsnc">
-            <img className="social" src={facebook} alt="facebook" />
+            <img className="social animate__animated animate__backInRight" src={facebook} alt="facebook" />
           </a>
           <a href="https://www.instagram.com/enigma_cocktail_restaurant/">
-            <img className="social" src={instagram} alt="instagram" />
+            <img className="social animate__animated animate__backInRight" src={instagram} alt="instagram" />
           </a>
         </div>
       </div>
@@ -93,28 +100,32 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-            <Link onClick={closeNavbar} to="/il-ristorante">
+              <Link onClick={closeNavbar} to="/il-ristorante">
                 Il Ristorante
               </Link>
             </li>
-            <li><Link onClick={closeNavbar} to="/il-menu">
+            <li>
+              <Link onClick={closeNavbar} to="/il-menu">
                 Menu
-              </Link></li>
-              <li><Link onClick={closeNavbar} to="/prenota">
+              </Link>
+            </li>
+            <li>
+              <Link onClick={closeNavbar} to="/prenota">
                 Prenota
-              </Link></li>
+              </Link>
+            </li>
           </ul>
           <div className="cont-social-ul">
-          <a href="https://wa.me/3899999788">
-            <img className="social" src={phone} alt="phone" />
-          </a>
-          <a href="https://www.facebook.com/mogsnc">
-            <img className="social" src={facebook} alt="facebook" />
-          </a>
-          <a href="https://www.instagram.com/enigma_cocktail_restaurant/">
-            <img className="social" src={instagram} alt="instagram" />
-          </a>
-        </div>
+            <a href="https://wa.me/3899999788">
+              <img className="social" src={phone} alt="phone" />
+            </a>
+            <a href="https://www.facebook.com/mogsnc">
+              <img className="social" src={facebook} alt="facebook" />
+            </a>
+            <a href="https://www.instagram.com/enigma_cocktail_restaurant/">
+              <img className="social" src={instagram} alt="instagram" />
+            </a>
+          </div>
         </div>
       </div>
     </div>

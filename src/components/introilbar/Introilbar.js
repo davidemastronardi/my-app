@@ -7,7 +7,7 @@ const Introilbar = () => {
     <div className="intro-bar">
       <div className="box-intro">
         <div className="box-logo">
-          <img className="il-bar-logo" src={ilBar} alt="" />
+          <img className="il-bar-logo animate__animated animate__fadeInLeft" src={ilBar} alt="" />
         </div>
       </div>
     </div>
