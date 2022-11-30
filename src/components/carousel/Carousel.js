@@ -3,8 +3,12 @@ import Slider from "react-slick";
 import "./Carousel.css"
 import nextArrow from"../../img/right.svg"
 import prevArrow from"../../img/left.svg"
-import imgProva from "../../img/vassoio.png"
+import vassoio from "../../img/vassoio.png"
 import negroni from "../../img/negroni.jpg"
+import soffitto from "../../img/soffitto.webp"
+import corzetti from "../../img/corzetti.webp"
+import flan from "../../img/flan.webp"
+import tagliere from "../../img/tagliere.webp"
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -66,32 +70,24 @@ export default class Responsive extends Component {
       <div className="carousel">
         <Slider {...settings}>
           <div className="carousel-wrap-img">
-            <img className="carousel-img" src={imgProva} alt="" />
+            <img className="carousel-img" src={vassoio} alt="" />
           </div>
           <div className="carousel-wrap-img">
             <img className="carousel-img" src={negroni} alt="" />
           </div>
           <div className="carousel-wrap-img">
-            <img className="carousel-img" src={imgProva} alt="" />
+            <img className="carousel-img" src={soffitto} alt="" />
           </div>
           <div className="carousel-wrap-img">
-            <img className="carousel-img" src={imgProva} alt="" />
+            <img className="carousel-img" src={corzetti} alt="" />
           </div>
           <div className="carousel-wrap-img">
-            <img className="carousel-img" src={imgProva} alt="" />
+            <img className="carousel-img" src={flan} alt="" />
           </div>
           <div className="carousel-wrap-img">
-            <img className="carousel-img" src={imgProva} alt="" />
+            <img className="carousel-img" src={tagliere} alt="" />
           </div>
-          <div className="carousel-wrap-img">
-            <img className="carousel-img" src={imgProva} alt="" />
-          </div>
-          <div className="carousel-wrap-img">
-            <img className="carousel-img" src={imgProva} alt="" />
-          </div>
-          <div className="carousel-wrap-img">
-            <img className="carousel-img" src={imgProva} alt="" />
-          </div>
+
   
     
         </Slider>

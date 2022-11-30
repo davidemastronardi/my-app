@@ -1,6 +1,6 @@
 .carousel{
   color: white ;
-  padding: 15px;
+  padding: 30px 15px;
 }
 .slick-prev:before, .slick-next:before{
   content: "" !important;
@@ -44,7 +44,7 @@ object-fit: cover;
   height: 50px;
   }
   .carousel{
-    padding: 100px;
+    padding: 30px 100px;
   }
   .slick-prev, .slick-next {
     display: block !important;
