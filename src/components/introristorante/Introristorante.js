@@ -7,7 +7,7 @@ const Introristorante = () => {
     <div className="intro-ristorante">
     <div className="box-intro-ristorante">
       <div className="box-logo">
-        <img className="il-ristorante-logo animate__animated animate__fadeInLeft" src={logoilristorante} alt="" />
+        <img className="il-ristorante-logo animate__animated animate__fadeInDown" src={logoilristorante} alt="" />
       </div>
     </div>
   </div>
