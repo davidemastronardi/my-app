@@ -47,33 +47,7 @@ const CardPrenota = () => {
           <h1 className="title-prenota">Prenota ora</h1>
         </div>
         <form className="form" ref={form} onSubmit={InvioDati}>
-          {isOpen && (
-            <div className="box-messaggio">
-              <img
-                className="x-messaggio"
-                src={x}
-                onClick={closeMessaggio}
-                alt="x"
-              />
-              <div className="text-messaggio">
-                <h1>Attenzione!</h1>
-                <p>
-                  Lo staff di <strong>ENIGMA</strong> consiglia di concordare un
-                  menu fisso per prenotazioni di tavoli composti da 5 o più
-                  persone, così da evitare lunghi tempi di attesa.
-                </p>
-                <p>Contattaci via whatsapp o telefonicamente. </p>
-                <div className="box-button-messaggio">
-                  <a href="https://wa.me/3899999788" target="_blank">
-                    <img className="button-whatsapp" src={pippo} alt="phone" />
-                  </a>
-                </div>
-                <p>
-                  <strong>+39 389 9999788</strong>
-                </p>
-              </div>
-            </div>
-          )}
+         
           <div className="box-input">
             <label>Nome</label>
             <input className="input" name="nome" type="text" required />
@@ -133,6 +107,33 @@ const CardPrenota = () => {
               name="messaggio"
             ></textarea>
           </div>
+          {isOpen && (
+            <div className="box-messaggio">
+              <img
+                className="x-messaggio"
+                src={x}
+                onClick={closeMessaggio}
+                alt="x"
+              />
+              <div className="text-messaggio">
+                <h1>Attenzione!</h1>
+                <p>
+                  Lo staff di <strong>ENIGMA</strong> consiglia di concordare un
+                  menu fisso per prenotazioni di tavoli composti da 5 o più
+                  persone, così da evitare lunghi tempi di attesa.
+                </p>
+                <p>Contattaci via whatsapp o telefonicamente. </p>
+                <div className="box-button-messaggio">
+                  <a href="https://wa.me/3899999788" target="_blank">
+                    <img className="button-whatsapp" src={pippo} alt="phone" />
+                  </a>
+                </div>
+                <p>
+                  <strong>+39 389 9999788</strong>
+                </p>
+              </div>
+            </div>
+          )}
           <div className="box-invia">
             <input
               disabled={persone >= 5}
