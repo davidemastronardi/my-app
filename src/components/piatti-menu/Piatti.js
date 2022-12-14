@@ -9,6 +9,8 @@ const Piatti = () => {
   const [primi, setPrimi] = useState([]);
   const [secondi, setSecondi] = useState([]);
   const [dolci, setDolci] = useState([]);
+  const [aperitivo, setAperitivo] = useState([]);
+  const [alcolici, setAlcolici] = useState([]);
 
   const menuallacarta = useRef();
   const apericena = useRef();
@@ -44,13 +46,32 @@ const Piatti = () => {
         setDolci(obj.data);
       });
   };
+  const getAperitivo = () => {
+    fetch("http://localhost:3001/api/apericene")
+      .then((res) => res.json())
+      .then((obj) => {
+        setAperitivo(obj.data);
+      });
+  };
+  const getAlcolici = () => {
+    fetch("http://localhost:3001/api/cocktails")
+      .then((res) => res.json())
+      .then((obj) => {
+        setAlcolici(obj.data);
+      });
+  };
 
   useEffect(() => {
+
     getAntipasti();
     getPrimi();
     getSecondi();
     getDolci();
+    getAperitivo();
+    getAlcolici();
+
   }, []);
+
 
   const renderAntipasti = () => {
     return antipasti.map((dati, i) => {
@@ -70,6 +91,16 @@ const Piatti = () => {
   };
   const renderDolci = () => {
     return dolci.map((dati, i) => {
+      return <MenuItem key={i} dati={dati} />;
+    });
+  };
+  const renderAperitivo = () => {
+    return aperitivo.map((dati, i) => {
+      return <MenuItem key={i} dati={dati} />;
+    });
+  };
+  const renderAlcolici = () => {
+    return alcolici.map((dati, i) => {
       return <MenuItem key={i} dati={dati} />;
     });
   };
@@ -160,36 +191,7 @@ const Piatti = () => {
           <p className="text-entree">per iniziare</p>
         </div>
         <div className="apericena">
-          <div className="cont-title-descrizione">
-            <h1 className="title-descrizione-entree">
-              - Focaccia e salame cotto
-            </h1>
-          </div>
-          <div className="cont-title-descrizione">
-            <h1 className="title-descrizione-entree">- Tagliere di formaggi</h1>
-          </div>
-          <div className="cont-title-descrizione">
-            <h1 className="title-descrizione-entree">
-              - Tagliere di salumi Barabino e toma
-            </h1>
-          </div>
-          <div className="cont-title-descrizione">
-            <h1 className="title-descrizione-entree">
-              - Tagliere salumi e formaggi
-            </h1>
-          </div>
-          <div className="cont-title-descrizione">
-            <h1 className="title-descrizione-entree">- Agnolotti</h1>
-            <p className="text-entree">
-              Burro e salvia, fondo bruno, culo nudo, vino.
-            </p>
-          </div>
-          <div className="cont-title-descrizione">
-            <h1 className="title-descrizione-entree">
-              - Focaccia al formaggio
-            </h1>
-            <p className="text-entree">Montebore, lardo e miele tartufato.</p>
-          </div>
+          {renderAperitivo()}
         </div>
       </div>
       <div className="box-cocktail">
@@ -198,57 +200,7 @@ const Piatti = () => {
           <p className="text-entree">per accompagnare</p>
         </div>
         <div className="cocktail">
-          <div className="cont-title-descrizione">
-            <h1 className="title-descrizione-entree">Manhattan</h1>
-            <p className="text-entree">
-              Rye whisky, vermouth rosso, angostura.
-            </p>
-          </div>
-          <div className="cont-title-descrizione">
-            <h1 className="title-descrizione-entree">Martini cocktail</h1>
-            <p className="text-entree">
-              Gin Borbèa, vermouth dry, oliva/limone.
-            </p>
-          </div>
-          <div className="cont-title-descrizione">
-            <h1 className="title-descrizione-entree">Apple mule</h1>
-            <p className="text-entree">
-              Gin Borbèa, vermouth dry, oliva/limone.
-            </p>
-          </div>
-          <div className="cont-title-descrizione">
-            <h1 className="title-descrizione-entree">Autumn smash</h1>
-            <p className="text-entree">
-              Vodka, succo di limone, sciroppo d’acero, succo di mela, polpa di
-              fichi.
-            </p>
-          </div>
-          <div className="cont-title-descrizione">
-            <h1 className="title-descrizione-entree">Pear Sour</h1>
-            <p className="text-entree">
-              Brandy, succo di pera, succo di limone, albumina.
-            </p>
-          </div>
-          <div className="cont-title-descrizione">
-            <h1 className="title-descrizione-entree">
-              Pumpkin spice margarita
-            </h1>
-            <p className="text-entree">
-              Tequila, panna, succo di zucca, etratto di vaniglia.
-            </p>
-          </div>
-          <div className="cont-title-descrizione">
-            <h1 className="title-descrizione-entree">Gin-tonic nostrano</h1>
-            <p className="text-entree">
-              Gin Panarea / Borbèa, Acqua Brillante.
-            </p>
-          </div>
-          <div className="cont-title-descrizione">
-            <h1 className="title-descrizione-entree">Amaretto Sour</h1>
-            <p className="text-entree">
-              Disaronno, succo di zucca, succo limone, albumina.
-            </p>
-          </div>
+        {renderAlcolici()}
         </div>
       </div>
     </div>

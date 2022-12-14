@@ -4,12 +4,14 @@ import Orari from "../../components/orari/Orari";
 import "./Home.css";
 import Sapori from "../../components/sapori/Sapori";
 import Carousel from "../../components/carousel/Carousel";
+import Player from "../../components/player/Player";
 
 const Home = () => {
   return (
     <div className="home">
       <header>
         <div className="introhome"><Introhome /></div>
+        <div className=""><Player/></div>
         <div className="orari"><Orari/></div>
         <div className="sapori-territorio"><Sapori/></div>
         <div className="carosel"><Carousel/></div>
