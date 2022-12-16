@@ -23,9 +23,8 @@ const Orari = () => {
         <div className="cont-text blak">
           <h2 className="title">Orari di apertura</h2>
           <p>
-            Lunedì: 18 - 01 <br />
-            Mercoledì - Domenica: 18 -01 <br />
-            Martedì: chiuso
+            Martedì - Domenica: 18 -01 <br />
+            Lunedi: chiuso
           </p>
         </div>
       </div>
