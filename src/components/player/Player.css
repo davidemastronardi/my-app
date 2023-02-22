@@ -2,3 +2,15 @@
     width: 100%;
     margin-top: 30px;
 }
+
+@media screen and (min-width: 1025px){
+   .video{
+    width: 1024px;
+    margin-top: 30px;
+    border-radius: 20px;
+} 
+.container-video{
+    display: flex;
+   justify-content: center;
+}
+}

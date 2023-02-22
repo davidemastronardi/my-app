@@ -22,6 +22,7 @@ import Prenota from "./pages/prenota/Prenota";
 import Halloween from "./components/halloween/Halloween";
 import { useEffect } from "react";
 export function ScrollToTop() {
+  
   const { pathname } = useLocation();
 
   useEffect(() => {

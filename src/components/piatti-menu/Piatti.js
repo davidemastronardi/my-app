@@ -21,6 +21,7 @@ const Piatti = () => {
       .then((res) => res.json())
       .then((data) => {
         setAntipasti(data.data);
+      
       });
   };
 
@@ -62,16 +63,13 @@ const Piatti = () => {
   };
 
   useEffect(() => {
-
     getAntipasti();
     getPrimi();
     getSecondi();
     getDolci();
     getAperitivo();
     getAlcolici();
-
   }, []);
-
 
   const renderAntipasti = () => {
     return antipasti.map((dati, i) => {
@@ -190,18 +188,14 @@ const Piatti = () => {
           <h1 className="title-entree">Apericena</h1>
           <p className="text-entree">per iniziare</p>
         </div>
-        <div className="apericena">
-          {renderAperitivo()}
-        </div>
+        <div className="apericena">{renderAperitivo()}</div>
       </div>
       <div className="box-cocktail">
         <div className="cont-entree" ref={cocktail}>
           <h1 className="title-entree">Cocktail</h1>
           <p className="text-entree">per accompagnare</p>
         </div>
-        <div className="cocktail">
-        {renderAlcolici()}
-        </div>
+        <div className="cocktail">{renderAlcolici()}</div>
       </div>
     </div>
   );
